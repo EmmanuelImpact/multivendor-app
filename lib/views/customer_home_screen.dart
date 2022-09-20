@@ -10,7 +10,7 @@ class CustomerHomeScreen extends StatefulWidget {
 
 class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
 //Logic For The Body
-  final List<Widget> _pages = [
+  final List<Widget> _pages = const [
     HomeScreen(),
     Center(
       child: Text('Search'),
