@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "695657422866",
+    "project_id": "multivendorapp-d8366",
+    "storage_bucket": "multivendorapp-d8366.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695657422866:android:8ad887e4543f509271b8cb",
+        "android_client_info": {
+          "package_name": "com.thelema.multi_vendor_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695657422866-nqa6s00dhini3vjdqarqr6tb8vlo3gq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM28QnBkK27Mj0D-IFMIMd7nZf4pL44sA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695657422866-nqa6s00dhini3vjdqarqr6tb8vlo3gq0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
