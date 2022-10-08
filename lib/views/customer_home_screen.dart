@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'bottom_navigation_screens/category_screen.dart';
 import '../views/bottom_navigation_screens/home_screen.dart';
 
 class CustomerHomeScreen extends StatefulWidget {
   const CustomerHomeScreen({Key? key}) : super(key: key);
+
+  static const routeName = '/customer-home-screen';
 
   @override
   State<CustomerHomeScreen> createState() => _CustomerHomeScreenState();
@@ -12,9 +15,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
 //Logic For The Body
   final List<Widget> _pages = const [
     HomeScreen(),
-    Center(
-      child: Text('Search'),
-    ),
+    CategoryScreen(),
     Center(
       child: Text('Shop'),
     ),
@@ -54,7 +55,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
             icon: Icon(
               Icons.search,
             ),
-            label: 'Search',
+            label: 'Category',
           ),
           BottomNavigationBarItem(
             icon: Icon(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import './views/customer_signup_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import './views/customer_home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +39,9 @@ class MultiVendorApp extends StatelessWidget {
             ),
       ),
       title: 'MultiVendorApp',
-      home: const CustomerSignUpPage(),
+
+      home: const CustomerHomeScreen(),
+      //routes: {},
     );
   }
 }
