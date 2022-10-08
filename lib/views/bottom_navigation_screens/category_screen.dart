@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import '/views/inners_screen/groceries_screen.dart';
+import '/views/inners_screen/utensils_screen.dart';
 import '/views/inners_screen/men_screen.dart';
 import '/models/categories_list.dart';
+import '/views/inners_screen/women_screen.dart';
+import '/views/inners_screen/kids_screen.dart';
+import '/views/inners_screen/electronics_screen.dart';
+import '/views/inners_screen/upholstery_screen.dart';
 
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen({Key? key}) : super(key: key);
@@ -68,24 +74,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 },
                 children: [
                   MenScreen(),
-                  Center(
-                    child: Text('Women'),
-                  ),
-                  Center(
-                    child: Text('Electronics'),
-                  ),
-                  Center(
-                    child: Text('Kids'),
-                  ),
-                  Center(
-                    child: Text('Groceries'),
-                  ),
-                  Center(
-                    child: Text('Utensils'),
-                  ),
-                  Center(
-                    child: Text('Upholstery'),
-                  ),
+                  WomenScreen(),
+                  ElectronicsScreen(),
+                  KidsScreen(),
+                  GroceriesScreen(),
+                  UtensilsScreen(),
+                  UpholsteriesScreen(),
                 ],
               ),
             ),

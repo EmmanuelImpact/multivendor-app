@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:multi_vendor_app/models/categories_list.dart';
+import '/models/categories_list.dart';
+import '/views/inners_screen/product_item_detail_page.dart';
 
 class MenScreen extends StatelessWidget {
   const MenScreen({Key? key}) : super(key: key);
@@ -26,21 +27,35 @@ class MenScreen extends StatelessWidget {
             mainAxisSpacing: 70,
             crossAxisSpacing: 15,
             children: List.generate(menSubCategory.length, (index) {
-              return Column(
-                children: [
-                  Expanded(
-                    child: Container(
-                      child: Image.asset(
-                        'assets/images/men/men$index.png',
-                        fit: BoxFit.cover,
+              return InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return ProductItemDetailScreen(
+                          mainCategory: 'Men',
+                          subCategory: menSubCategory[index],
+                        );
+                      },
+                    ),
+                  );
+                },
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        child: Image.asset(
+                          'assets/images/men/men$index.png',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
-                  ),
-                  Text(
-                    menSubCategory[index],
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+                    Text(
+                      menSubCategory[index],
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               );
             }),
           ),

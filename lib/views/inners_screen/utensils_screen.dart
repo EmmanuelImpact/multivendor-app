@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multi_vendor_app/models/categories_list.dart';
+import 'package:multi_vendor_app/views/inners_screen/product_item_detail_page.dart';
 
 class UtensilsScreen extends StatefulWidget {
   const UtensilsScreen({Key? key}) : super(key: key);
@@ -34,16 +35,30 @@ class _UtensilsScreenState extends State<UtensilsScreen> {
               setState(() {
                 indexChanged += indexChanged + 1;
               });
-              return Column(
-                children: [
-                  Container(
-                    child: Image.asset(
-                      'assets/images/utensils/uten$indexChanged.jpg',
-                      fit: BoxFit.cover,
+              return GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) {
+                        return ProductItemDetailScreen(
+                          mainCategory: 'Utensils',
+                          subCategory: utensils,
+                        );
+                      },
                     ),
-                  ),
-                  Text(utensils),
-                ],
+                  );
+                },
+                child: Column(
+                  children: [
+                    Container(
+                      child: Image.asset(
+                        'assets/images/utensils/uten$indexChanged.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Text(utensils),
+                  ],
+                ),
               );
             }).toList(),
           ),

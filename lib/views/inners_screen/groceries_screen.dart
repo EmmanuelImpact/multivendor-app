@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:multi_vendor_app/models/categories_list.dart';
+import '/models/categories_list.dart';
+import '/views/inners_screen/product_item_detail_page.dart';
 
 class GroceriesScreen extends StatelessWidget {
   const GroceriesScreen({Key? key}) : super(key: key);
@@ -22,16 +23,30 @@ class GroceriesScreen extends StatelessWidget {
             mainAxisSpacing: 70,
             crossAxisSpacing: 15,
             children: List.generate(groceriesSubCategory.length, (index) {
-              return Column(
-                children: [
-                  Container(
-                    child: Image.asset(
-                      'assets/images/groceries/groce$index.jpg',
-                      fit: BoxFit.cover,
+              return GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) {
+                        return ProductItemDetailScreen(
+                          mainCategory: 'Groceries',
+                          subCategory: groceriesSubCategory[index],
+                        );
+                      },
                     ),
-                  ),
-                  Text(groceriesSubCategory[index]),
-                ],
+                  );
+                },
+                child: Column(
+                  children: [
+                    Container(
+                      child: Image.asset(
+                        'assets/images/groceries/groce$index.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Text(groceriesSubCategory[index]),
+                  ],
+                ),
               );
             }),
           ),

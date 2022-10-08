@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:multi_vendor_app/models/categories_list.dart';
+import '/models/categories_list.dart';
+import '/views/inners_screen/product_item_detail_page.dart';
 
 class ElectronicsScreen extends StatelessWidget {
   const ElectronicsScreen({Key? key}) : super(key: key);
@@ -23,16 +24,30 @@ class ElectronicsScreen extends StatelessWidget {
             crossAxisSpacing: 15,
             children: [
               ...List.generate(electSubCategory.length, (index) {
-                return Column(
-                  children: [
-                    Container(
-                      child: Image.asset(
-                        'assets/images/electronics/elect$index.jpg',
-                        fit: BoxFit.cover,
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (
+                        BuildContext context,
+                      ) {
+                        return ProductItemDetailScreen(
+                          mainCategory: 'Electronics',
+                          subCategory: electSubCategory[index],
+                        );
+                      }),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Container(
+                        child: Image.asset(
+                          'assets/images/electronics/elect$index.jpg',
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    Text(electSubCategory[index]),
-                  ],
+                      Text(electSubCategory[index]),
+                    ],
+                  ),
                 );
               })
             ],

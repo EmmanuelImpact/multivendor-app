@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multi_vendor_app/views/inners_screen/product_item_detail_page.dart';
 import '/models/categories_list.dart';
 
 class WomenScreen extends StatelessWidget {
@@ -27,16 +28,30 @@ class WomenScreen extends StatelessWidget {
             children: List.generate(
               womenSubCategory.length,
               (index) {
-                return Column(
-                  children: [
-                    Container(
-                      child: Image.asset(
-                        'assets/images/women/w$index.jpg',
-                        fit: BoxFit.cover,
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) {
+                          return ProductItemDetailScreen(
+                            mainCategory: 'Women',
+                            subCategory: womenSubCategory[index],
+                          );
+                        },
                       ),
-                    ),
-                    Text(womenSubCategory[index]),
-                  ],
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Container(
+                        child: Image.asset(
+                          'assets/images/women/w$index.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Text(womenSubCategory[index]),
+                    ],
+                  ),
                 );
               },
             ),

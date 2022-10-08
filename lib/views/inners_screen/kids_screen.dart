@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:multi_vendor_app/models/categories_list.dart';
+import '/models/categories_list.dart';
+import '/views/inners_screen/product_item_detail_page.dart';
 
 class KidsScreen extends StatelessWidget {
   const KidsScreen({Key? key}) : super(key: key);
@@ -22,16 +23,30 @@ class KidsScreen extends StatelessWidget {
             mainAxisSpacing: 70,
             crossAxisSpacing: 15,
             children: List.generate(kidsSubCategory.length, (index) {
-              return Column(
-                children: [
-                  Container(
-                    child: Image.asset(
-                      'assets/images/kids/kids$index.jpg',
-                      fit: BoxFit.cover,
+              return InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) {
+                        return ProductItemDetailScreen(
+                          mainCategory: 'Kids',
+                          subCategory: kidsSubCategory[index],
+                        );
+                      },
                     ),
-                  ),
-                  Text(kidsSubCategory[index]),
-                ],
+                  );
+                },
+                child: Column(
+                  children: [
+                    Container(
+                      child: Image.asset(
+                        'assets/images/kids/kids$index.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Text(kidsSubCategory[index]),
+                  ],
+                ),
               );
             }),
           ),
