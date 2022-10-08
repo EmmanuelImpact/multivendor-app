@@ -26,7 +26,7 @@ class KidsScreen extends StatelessWidget {
                 children: [
                   Container(
                     child: Image.asset(
-                      'assets/images/kids/kids$index',
+                      'assets/images/kids/kids$index.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),

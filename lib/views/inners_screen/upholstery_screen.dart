@@ -29,7 +29,7 @@ class UpholsteriesScreen extends StatelessWidget {
                 children: [
                   Container(
                     child: Image.asset(
-                      'assets/images/upholstery',
+                      'assets/images/upholstery/upho$index.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),

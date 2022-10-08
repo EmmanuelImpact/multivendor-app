@@ -26,7 +26,7 @@ class GroceriesScreen extends StatelessWidget {
                 children: [
                   Container(
                     child: Image.asset(
-                      'assets/images/groceries/groce$index',
+                      'assets/images/groceries/groce$index.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),

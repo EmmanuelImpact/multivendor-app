@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:multi_vendor_app/models/categories_list.dart';
 
-class UtensilsScreen extends StatelessWidget {
+class UtensilsScreen extends StatefulWidget {
   const UtensilsScreen({Key? key}) : super(key: key);
 
+  @override
+  State<UtensilsScreen> createState() => _UtensilsScreenState();
+}
+
+class _UtensilsScreenState extends State<UtensilsScreen> {
+  int indexChanged = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,12 +31,14 @@ class UtensilsScreen extends StatelessWidget {
               crossAxisSpacing: 15,
             ),
             children: utensilsSubCategory.map((utensils) {
-              int index = 0;
+              setState(() {
+                indexChanged += indexChanged + 1;
+              });
               return Column(
                 children: [
                   Container(
                     child: Image.asset(
-                      'assets/images/utensils/uten$index',
+                      'assets/images/utensils/uten$indexChanged.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),

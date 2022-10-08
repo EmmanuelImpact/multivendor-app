@@ -27,7 +27,7 @@ class ElectronicsScreen extends StatelessWidget {
                   children: [
                     Container(
                       child: Image.asset(
-                        'assets/images/electronics/elect$index',
+                        'assets/images/electronics/elect$index.jpg',
                         fit: BoxFit.cover,
                       ),
                     ),

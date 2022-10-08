@@ -31,7 +31,7 @@ class WomenScreen extends StatelessWidget {
                   children: [
                     Container(
                       child: Image.asset(
-                        'assets/images/women/w$index',
+                        'assets/images/women/w$index.jpg',
                         fit: BoxFit.cover,
                       ),
                     ),
