@@ -30,7 +30,10 @@ class WomenScreen extends StatelessWidget {
                 return Column(
                   children: [
                     Container(
-                      child: Image.asset('assets/images/women/w$index'),
+                      child: Image.asset(
+                        'assets/images/women/w$index',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Text(womenSubCategory[index]),
                   ],
