@@ -8,6 +8,7 @@ class WomenScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -43,13 +44,19 @@ class WomenScreen extends StatelessWidget {
                   },
                   child: Column(
                     children: [
-                      Container(
-                        child: Image.asset(
-                          'assets/images/women/w$index.jpg',
-                          fit: BoxFit.cover,
+                      Expanded(
+                        child: Container(
+                          child: Image.asset(
+                            'assets/images/women/w$index.jpg',
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                      Text(womenSubCategory[index]),
+                      Text(
+                        womenSubCategory[index],
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
                     ],
                   ),
                 );

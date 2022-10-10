@@ -8,12 +8,16 @@ class GroceriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Groceries',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Groceries',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         SizedBox(
@@ -38,13 +42,19 @@ class GroceriesScreen extends StatelessWidget {
                 },
                 child: Column(
                   children: [
-                    Container(
-                      child: Image.asset(
-                        'assets/images/groceries/groce$index.jpg',
-                        fit: BoxFit.cover,
+                    Flexible(
+                      fit: FlexFit.tight,
+                      child: Container(
+                        child: Image.asset(
+                          'assets/images/groceries/groce$index.jpg',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
-                    Text(groceriesSubCategory[index]),
+                    Text(
+                      groceriesSubCategory[index],
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
                   ],
                 ),
               );

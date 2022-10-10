@@ -63,7 +63,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
               height: MediaQuery.of(context).size.height * 0.8,
               child: PageView(
                 controller: _pageController,
-                scrollDirection: Axis.vertical,
+                scrollDirection: Axis.horizontal,
                 onPageChanged: (value) {
                   for (var elements in mainCategoryList) {
                     elements.isSelected = false;

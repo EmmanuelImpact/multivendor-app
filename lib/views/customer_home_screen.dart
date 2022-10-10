@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multi_vendor_app/views/bottom_navigation_screens/profile_screen.dart';
 import 'bottom_navigation_screens/category_screen.dart';
 import '../views/bottom_navigation_screens/home_screen.dart';
 
@@ -13,7 +14,7 @@ class CustomerHomeScreen extends StatefulWidget {
 
 class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
 //Logic For The Body
-  final List<Widget> _pages = const [
+  final List<Widget> _pages = [
     HomeScreen(),
     CategoryScreen(),
     Center(
@@ -22,9 +23,7 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
     Center(
       child: Text('Cart'),
     ),
-    Center(
-      child: Text('Profile'),
-    ),
+    ProfileScreen(),
   ];
 
   var _selectedIndex = 0;

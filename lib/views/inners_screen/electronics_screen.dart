@@ -8,12 +8,16 @@ class ElectronicsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Electronics',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Electronics',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         SizedBox(
@@ -39,13 +43,20 @@ class ElectronicsScreen extends StatelessWidget {
                   },
                   child: Column(
                     children: [
-                      Container(
-                        child: Image.asset(
-                          'assets/images/electronics/elect$index.jpg',
-                          fit: BoxFit.cover,
+                      Flexible(
+                        fit: FlexFit.tight,
+                        child: Container(
+                          child: Image.asset(
+                            'assets/images/electronics/elect$index.jpg',
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                      Text(electSubCategory[index]),
+                      Text(
+                        electSubCategory[index],
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
                     ],
                   ),
                 );

@@ -53,6 +53,7 @@ class MenScreen extends StatelessWidget {
                     Text(
                       menSubCategory[index],
                       textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.headline6,
                     ),
                   ],
                 ),

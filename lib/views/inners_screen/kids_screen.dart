@@ -8,12 +8,16 @@ class KidsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Kids',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Kids',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         SizedBox(
@@ -38,13 +42,19 @@ class KidsScreen extends StatelessWidget {
                 },
                 child: Column(
                   children: [
-                    Container(
-                      child: Image.asset(
-                        'assets/images/kids/kids$index.jpg',
-                        fit: BoxFit.cover,
+                    Expanded(
+                      child: Container(
+                        child: Image.asset(
+                          'assets/images/kids/kids$index.jpg',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
-                    Text(kidsSubCategory[index]),
+                    Text(
+                      kidsSubCategory[index],
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
                   ],
                 ),
               );

@@ -10,57 +10,66 @@ class UtensilsScreen extends StatefulWidget {
 }
 
 class _UtensilsScreenState extends State<UtensilsScreen> {
-  int indexChanged = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Utensils',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Utensils',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.7,
           child: GridView(
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 200,
-              childAspectRatio: 3 / 2,
+              maxCrossAxisExtent: 120,
+              childAspectRatio: 1.8 / 2,
               mainAxisSpacing: 70,
               crossAxisSpacing: 15,
             ),
-            children: utensilsSubCategory.map((utensils) {
-              setState(() {
-                indexChanged += indexChanged + 1;
-              });
-              return GestureDetector(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (ctx) {
-                        return ProductItemDetailScreen(
-                          mainCategory: 'Utensils',
-                          subCategory: utensils,
-                        );
-                      },
-                    ),
-                  );
-                },
-                child: Column(
-                  children: [
-                    Container(
-                      child: Image.asset(
-                        'assets/images/utensils/uten$indexChanged.jpg',
-                        fit: BoxFit.cover,
+            children: List.generate(
+              utensilsSubCategory.length,
+              (index) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) {
+                          return ProductItemDetailScreen(
+                            mainCategory: 'Utensils',
+                            subCategory: utensilsSubCategory[index],
+                          );
+                        },
                       ),
-                    ),
-                    Text(utensils),
-                  ],
-                ),
-              );
-            }).toList(),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          child: Image.asset(
+                            'assets/images/utensils/uten$index.jpg',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        utensilsSubCategory[index],
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
           ),
         ),
       ],
