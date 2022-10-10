@@ -63,7 +63,7 @@ List<String> electSubCategory = [
   'Black Earpod',
   'Earpiece',
   'White Head Phone',
-  'Coputer Mouse',
+  'Computer Mouse',
   'Air Conditioner',
   'Pressing Iron',
   'Rounded-Base Pressing Iron',

@@ -37,6 +37,7 @@ class MultiVendorApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.cyan,
+        fontFamily: 'Lato',
         textTheme: ThemeData.light().textTheme.copyWith(
               headline1: const TextStyle(
                 color: Colors.cyan,

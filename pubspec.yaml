@@ -89,7 +89,12 @@ flutter:
     - family: Alkalami
       fonts:
         - asset: assets/fonts/Alkalami-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+    - family: Lato    
+      fonts:
+        - asset: assets/fonts/Lato-Bold.ttf
+        - asset: assets/fonts/Lato-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Lato-Regular.ttf  
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
